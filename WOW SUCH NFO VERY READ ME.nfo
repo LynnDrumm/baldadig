@@ -1,0 +1,13 @@
+hello and welcome to demo instructions, yes.
+
+to load the demo, open mIRC and enter the following:
+
+/load -rs path\to\baldadig\demo.mrc
+
+(obviously you replace the path)
+
+to run it:
+
+/baldadig
+
+please use mIRC 6.35, which is available from http://www.mirc.com/get.php?version=635

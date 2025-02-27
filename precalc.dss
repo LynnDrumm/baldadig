@@ -1,0 +1,125 @@
+set %dm.bpm 0.0037
+set %dm.music $qt($scriptdirWHORE.wav)
+set %dm.interlace 1
+dmOpenBuffer @dm.interlace.1 320 180
+dmTilePic    @dm.interlace.1 $scriptdirimg\raster-1.png
+dmOpenBuffer @dm.interlace.2 320 180
+dmTilePic    @dm.interlace.2 $scriptdirimg\raster-2.png
+;;----------------------------------------------------------
+dmLoadPart splash.mrc
+set %dm.splash.drop.t 0
+set %dm.splash.drop.o 1
+;;---------------------------
+set %dm.splash.text.1 Yes!
+set %dm.splash.text.2 The mighty
+set %dm.splash.text.3 poo-brain posse
+set %dm.splash.text.4 has returned
+set %dm.splash.text.5 with a new demo
+set %dm.splash.text.6 at evoke 2014
+set %dm.splash.text.7 called...
+set %dm.splash.text.8 $str($chr(160), 8)
+set %dm.splash.text.c 1
+set %dm.splash.text.ctab $dmGenCtab($scriptdirimg\ctab\black-blue-black.png)
+set %dm.splash.text.ctab.c 1
+set %dm.splash.text.interlace.c 1
+dmOpenBuffer @dm.splash.1 320 180
+dmTilePic    @dm.splash.1 $scriptdirimg\raster-1.png
+dmOpenBuffer @dm.splash.2 320 180
+dmTilePic    @dm.splash.2 $scriptdirimg\raster-2.png
+dmOpenBuffer @dm.splash.3 320 180
+set %dm.splash.drop.rate 32
+;;----------------------------------------------------------
+dmLoadPart logozoom.mrc
+dmOpenBuffer @dm.logozoom.1 960 960
+dmOpenBuffer @dm.logozoom.2 320 320
+drawpic -nc  @dm.logozoom.1 0 0 $qt($scriptdirimg\logo.png)
+set %dm.logozoom.zoom -315
+set %dm.logozoom.zoom.scale 0
+set %dm.logozoom.fade.ctab $dmGenCtab($scriptdirimg\ctab\white-black.png)
+set %dm.logozoom.fade.current $rgb(255, 255, 255)
+set %dm.logozoom.fade.c 1
+;;----------------------------------------------------------
+dmLoadPart cubes.mrc
+set %dm.cubes.size 16
+set %dm.cubes.offset 42
+set %dm.cubes.squaretab 86 43,0 43,129 43,129 0,0 129,86 129,43 129,129 86,86 86,0 86,129 129,43 0,43 43,43 86,86 0,0 0
+set %dm.cubes.squaretab.c 1
+set %dm.cubes.pic $qt($scriptdirimg\unicorn.png)
+set %dm.cubes.picfade 0
+set %dm.cubes.colour.1 $rand(0, 16777215)
+set %dm.cubes.colour.2 $rand(0, 16777215)
+set %dm.cubes.colour.3 $rand(0, 16777215)
+set %dm.cubes.colour.4 $rand(0, 16777215)
+set %dm.cubes.colour.c 1
+set %dm.cubes.fadeout.1 0
+;;----------------------------------------------------------
+dmLoadPart starfield.mrc
+dmOpenBuffer @dm.starfield.1 340 180
+dmOpenBuffer @dm.starfield.2 340 180
+dmOpenBuffer @dm.starfield.3 340 180
+;;----------------------------------------------------------
+set %dm.sinescroll.offset 1
+set %dm.sinescroll.x 320
+set %dm.sinescroll.text $upper(greetings to lnx - trsi - svatg - trbl - DSS - Guideline - MegaHawks Inc. - 3LN - trilobit - DDK - Nuance - plush - Farbrausch - hitmen - AttentionWhore - Fairlight - dekadence - Crest - Oxyron - RiFT - Titan (sucks) - RBBS - Spaceballs - and all the forgotten ones... .. .)
+set %dm.sinescroll.ctab $dmGenCtab($scriptdirimg\ctab\rainbow.png)
+;;----------------------------------------------------------
+dmLoadPart copper.mrc
+set %dm.copper.tabcnt 1
+set %dm.copper.barcount 1
+set %dm.copper.y.offset -70
+set %dm.copper.logo $qt($scriptdirimg\poobrain.png)
+dmOpenBuffer @dm.copper.1 320 180
+set %dm.copper.flash 1
+set %dm.copper.flash.c 0
+set %dm.copper.fadeout 0
+;;----------------------------------------------------------
+dmLoadPart picwobble.mrc
+window -dk0pfh @dm.picwobble.1 0 0 320 180
+drawrect -nrf @dm.picwobble.1 0 0 0 0 320 180
+set %dm.picwobble.c 0
+set %dm.picwobble.picfade 0
+set %dm.picwobble.pic $qt($scriptdirimg\poobrain.png)
+set %dm.picwobble.offset 0
+set %dm.picwobble.fadeout 0
+;;----------------------------------------------------------
+dmLoadPart vertscroll.mrc
+set %dm.vertscroll.text reng deng deng deng je moet stampen jonguhhh en vooral genieten van de laatste paar momenten en effecten van deze onwaarschijnlijk kwalitatief hoge poo brain demo je weet zelf
+set %dm.vertscroll.textLen $len(%dm.vertscroll.text)
+set %dm.vertscroll.scrollY 180
+set %dm.vertscroll.offset 1
+set %dm.vertscroll.bg.offset -90
+dmOpenBuffer @dm.vertscroll.1 320 180
+set %dm.vertscroll.flash 1
+set %dm.vertscroll.flash.c 0
+;;----------------------------------------------------------
+dmLoadPart rotozoom.mrc
+set %dm.rotozoom.tex $qt($scriptdirimg\rotzoomtex2.png)
+set %dm.rotozoom.c 90
+set %dm.rotozoom.fadein 3000
+dmOpenBuffer @dm.rotozoom.1 400 400
+set %dm.rotozoom.ctab $dmGenCtab($scriptdirimg\ctab\rainbow.png)
+dmOpenBuffer @dm.rotozoom.2 320 180
+set %dm.rotozoom.pic.fade 0
+;;----------------------------------------------------------
+dmLoadPart moire.mrc
+set %dm.moire.c 0
+set %dm.moire.tot 1
+set %dm.moire.k1 $rgb(255,255,0)
+set %dm.moire.k2 $rand(0, 16777215)
+set %dm.moire.k.c 1
+set %dm.moire.pic.h 0
+set %dm.moire.fadeout 320
+;;----------------------------------------------------------
+dmLoadPart stretch.mrc
+dmOpenBuffer @dm.stretch.tex 1280 720
+drawpic @dm.stretch.tex 0 0 $qt($scriptdirimg\pattern.png)
+set %dm.stretch.zoom 8000
+set %dm.stretch.pan 400
+set %dm.stretch.fade.tab 149 107 64 158 134 110 116 156 53 170 11 160 129 180 177 36 54 17 178 6 143 84 132 25 28 22 172 105 26 117 111 55 18 145 24 52 131 91 42 151 90 92 148 3 9 179 40 174 98 12 38 60 133 70 162 63 57 81 161 44 59 154 65 19 93 15 13 126 80 31 144 164 100 35 75 87 76 147 102 43 37 142 66 152 125 106 103 78 49 73 67 109 8 96 68 79 137 20 83 29 159 32 113 16 166 121 140 33 120 14 136 138 112 72 119 127 139 39 108 23 10 114 155 95 146 124 7 175 163 41 171 94 71 86 89 82 85 48 104 46 51 47 2 168 157 169 21 123 4 128 167 61 99 69 45 58 122 34 50 27 118 173 62 115 77 150 5 97 30 88 74 56 135 176 101 130 165 141 153 1
+set %dm.stretch.fade.c 0
+dmOpenBuffer @dm.stretch.1 320 180
+drawrect -nrf @dm.stretch.1 $rgb(255,255,255) 0 0 0 320 180
+;;----------------------------------------------------------
+dmLoadPart vector.mrc
+set %dm.vector.v -0.541 0.500 0.657 -0.541 0.557 0.657 -0.398 0.500 0.657 -0.398 0.557 0.657 -0.541 0.557 0.514 -0.541 0.500 0.514 -0.398 0.557 0.514 -0.398 0.500 0.514 -0.541 0.500 0.657 -0.541 0.500 0.846 -0.398 0.500 0.657 -0.398 0.500 0.846 -0.541 0.500 0.846 -0.398 0.500 0.846 -0.398 0.557 0.657 -0.398 0.557 0.846 -0.398 0.500 0.846 -0.398 0.557 0.846 -0.541 0.557 0.657 -0.541 0.557 0.846 -0.398 0.557 0.846 -0.541 0.557 0.846 -0.541 0.500 0.846 -0.541 0.557 0.846 -0.541 0.557 0.514 -0.541 0.557 0.324 -0.398 0.557 0.514 -0.398 0.557 0.324 -0.541 0.557 0.324 -0.398 0.557 0.324 -0.398 0.500 0.514 -0.398 0.500 0.324 -0.398 0.557 0.324 -0.398 0.500 0.324 -0.541 0.500 0.514 -0.541 0.500 0.324 -0.398 0.500 0.324 -0.541 0.500 0.324 -0.541 0.557 0.324 -0.541 0.500 0.324 -0.398 0.500 0.514 -0.214 0.500 0.514 -0.398 0.500 0.657 -0.214 0.500 0.657 -0.214 0.500 0.514 -0.214 0.500 0.657 -0.398 0.557 0.514 -0.214 0.557 0.514 -0.214 0.500 0.514 -0.214 0.557 0.514 -0.398 0.557 0.657 -0.214 0.557 0.657 -0.214 0.557 0.514 -0.214 0.557 0.657 -0.214 0.500 0.657 -0.214 0.557 0.657 -0.541 0.500 0.514 -0.724 0.500 0.514 -0.541 0.500 0.657 -0.724 0.500 0.657 -0.724 0.500 0.514 -0.724 0.500 0.657 -0.541 0.557 0.657 -0.724 0.557 0.657 -0.724 0.500 0.657 -0.724 0.557 0.657 -0.541 0.557 0.514 -0.724 0.557 0.514 -0.724 0.557 0.657 -0.724 0.557 0.514 -0.724 0.500 0.514 -0.724 0.557 0.514 -0.300 0.500 1.242 -0.066 0.499 1.113 -0.300 0.540 1.241 -0.066 0.539 1.112 -0.345 0.538 1.160 -0.111 0.537 1.031 -0.344 0.498 1.161 -0.110 0.497 1.032 -0.300 0.500 1.242 -0.300 0.540 1.241 -0.066 0.499 1.113 -0.066 0.539 1.112 -0.300 0.540 1.241 -0.345 0.538 1.160 -0.066 0.539 1.112 -0.111 0.537 1.031 -0.345 0.538 1.160 -0.344 0.498 1.161 -0.111 0.537 1.031 -0.110 0.497 1.032 -0.300 0.500 1.242 -0.344 0.498 1.161 -0.066 0.499 1.113 -0.110 0.497 1.032 0.096 0.501 1.242 0.330 0.500 1.113 0.096 0.541 1.241 0.330 0.540 1.112 0.051 0.539 1.160 0.285 0.538 1.031 0.052 0.499 1.161 0.286 0.498 1.032 0.096 0.501 1.242 0.096 0.541 1.241 0.330 0.500 1.113 0.330 0.540 1.112 0.096 0.541 1.241 0.051 0.539 1.160 0.330 0.540 1.112 0.285 0.538 1.031 0.051 0.539 1.160 0.052 0.499 1.161 0.285 0.538 1.031 0.286 0.498 1.032 0.096 0.501 1.242 0.052 0.499 1.161 0.330 0.500 1.113 0.286 0.498 1.032 0.338 0.500 0.564 0.202 0.500 0.608 0.202 0.500 0.608 0.202 0.500 0.751 0.202 0.500 0.751 0.338 0.500 0.795 0.338 0.500 0.795 0.422 0.500 0.680 0.338 0.500 0.564 0.422 0.500 0.680 0.338 0.557 0.564 0.202 0.557 0.608 0.202 0.557 0.608 0.202 0.557 0.751 0.202 0.557 0.751 0.338 0.557 0.795 0.338 0.557 0.795 0.422 0.557 0.680 0.338 0.557 0.564 0.422 0.557 0.680 0.338 0.500 0.564 0.338 0.557 0.564 0.202 0.500 0.608 0.202 0.557 0.608 0.202 0.500 0.751 0.202 0.557 0.751 0.338 0.500 0.795 0.338 0.557 0.795 0.422 0.500 0.680 0.422 0.557 0.680 0.658 0.500 0.392 0.522 0.500 0.436 0.522 0.500 0.436 0.522 0.500 0.579 0.522 0.500 0.579 0.658 0.500 0.623 0.658 0.500 0.623 0.742 0.500 0.508 0.658 0.500 0.392 0.742 0.500 0.508 0.658 0.557 0.392 0.522 0.557 0.436 0.522 0.557 0.436 0.522 0.557 0.579 0.522 0.557 0.579 0.658 0.557 0.623 0.658 0.557 0.623 0.742 0.557 0.508 0.658 0.557 0.392 0.742 0.557 0.508 0.658 0.500 0.392 0.658 0.557 0.392 0.522 0.500 0.436 0.522 0.557 0.436 0.522 0.500 0.579 0.522 0.557 0.579 0.658 0.500 0.623 0.658 0.557 0.623 0.742 0.500 0.508 0.742 0.557 0.508 0.995 -0.247 1.362 0.995 0.500 1.362 0.995 0.500 1.362 0.597 0.500 1.760 -0.995 -0.247 1.760 0.597 -0.247 1.760 0.597 -0.247 1.760 0.597 0.500 1.760 -0.995 0.500 -1.760 0.995 0.500 -1.760 0.995 0.500 -1.760 0.995 -0.247 -1.760 -0.995 -0.247 -1.760 0.995 -0.247 -1.760 0.995 -0.247 1.362 0.597 -0.247 1.760 0.995 -0.247 -1.760 0.995 -0.247 1.362 -0.995 -0.247 1.760 -0.995 0.500 1.760 -0.995 0.500 -1.760 -0.995 -0.247 -1.760 -0.995 -0.247 1.760 -0.995 -0.247 -1.760 -0.995 0.500 1.760 -0.995 0.500 -1.760 0.995 0.500 -1.760 0.995 0.500 1.362 -0.995 0.500 1.760 0.597 0.500 1.760 -0.729 0.500 -0.083 0.729 0.500 -0.083 0.729 0.500 -0.083 0.729 0.500 -1.502 0.729 0.500 -1.502 -0.729 0.500 -1.502 -0.729 0.500 -0.083 -0.729 0.500 -1.502 
+;;----------------------------------------------------------
